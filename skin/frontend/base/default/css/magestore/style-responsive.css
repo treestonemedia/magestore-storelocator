@@ -1,0 +1,1015 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jul 17, 2015, 10:28:02 AM
+    Author     : Sally
+*/
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../../fonts/glyphicons-halflings-regular.eot');
+    src: url('../../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/glyphicons-halflings-regular.woff') format('woff'),
+        url('../../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+        url('../../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+.storelocator-page *{
+    box-sizing: border-box;
+}
+.back-page{
+    margin: 5px 0;
+}
+.back-page a{
+    text-decoration: none;
+}
+.back-page a small{
+    line-height: 1.35;
+    font-size: 10px;
+    letter-spacing: -3px;
+    margin-right: 5px;
+}
+.back-page a:hover{
+    color: #A7A7A7;
+    text-decoration: none;
+}
+.storelocator-page h1{
+    color: #646678;
+    font-weight: 700;
+    border-bottom:1px solid #ccc;
+}
+.storelocator-index-index .page-header{
+    border-bottom:0;
+}
+.search-button{
+    float: left;
+}
+.search-button .search-distance{
+    padding:12px 10px 12px 30px;
+    background:url('../../images/storelocator/distance.png') no-repeat 1px center;
+    cursor: pointer;
+}
+.search-button .search-area{
+    padding:12px 10px 12px 30px;
+    background:url('../../images/storelocator/area.png') no-repeat 1px center;
+    cursor: pointer;
+}
+.search-button a.search{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #636363;
+    background-color:#E4E3E3;
+    font-size: 12px;
+}
+.search-button a.search.active{
+    color: #fff;
+    background-color: #428BCB;
+}
+.search-button a.search:hover{
+    text-decoration: none;
+    opacity: 0.85;
+}
+.search-button a.search.active:hover{
+    opacity: 0.85;
+}
+.storelocator-page .search-content{
+    background: #f8f8f8;
+    padding: 15px 0 0px 0;
+    margin-top: 8px;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ececec;
+    z-index: 100;
+}
+/*style radius*/
+.range-slider-input{
+    margin: 10px 0;
+    background-color: #ccc;
+    height: 8px;
+    position: relative;
+    top: 4px;
+}
+.range-slider-input .handle-slider{
+    width: 10px;
+    height: 15px;
+    background-color: #48B5E9;
+    cursor: pointer;
+    position: absolute;
+    top: -4px;
+    border: 8px solid #48B5E9;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+}
+#track1{
+    margin-top: 15px;
+    margin: 15px 8px;
+    position: relative;
+    width: 235px;
+}
+.track {
+    background-color: #428BCA;
+    position: relative;
+    height: 0.5em; width: 10em;
+    cursor: pointer; z-index: 0;
+}
+.handle {
+    background-color: red;
+    position: absolute;
+    height: 1em; width: 0.25em; top: -0.25em;
+    cursor: move; z-index: 2;
+}
+.track.vertical {
+    width: 0.5em; height: 10em;
+}
+.track.vertical .handle {
+    width: 1em; height: 0.25em; top: 0; left: -0.25em;
+}
+.range-slider-label{
+    padding: 6px 0px;
+    float: left;
+    position: absolute;
+    left: 290px;
+    top: 1px;
+    white-space: pre;
+}
+.input-radius label{
+    float: left;
+    text-align: center;
+    position: relative;
+    top: 8px;
+}
+/*end*/
+.input-location{
+    margin-bottom: 15px;
+}
+.input-location label{
+    float: left;
+    margin-top: 7px;
+}
+.input-location .form-control{
+    height:34px;
+}
+.search-filter ul li label{
+    background: url('../../images/storelocator/storelocator-img.png') no-repeat 0 -165px;
+    padding-left: 30px;
+    font-weight: 500;
+
+}
+.search-filter ul li label button{
+    border-radius: 0;
+    color: #fff;
+    background-color: #428bca;
+    border: none;
+    box-shadow: none;
+    padding: 8px 12px;
+    outline: 0;
+}
+.search-filter ul li label button:hover,
+.custom-popup .box-input button:hover{
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    opacity: 0.85;
+    box-shadow: none;
+}
+.custom-popup .box-input button:hover{
+    border-radius: 4px;
+}
+.search-filter ul li label:first-child{
+    background: transparent;
+    font-weight: 700;
+    padding-left: 0;
+}
+.input-location input[type=text]{
+    width: 100%;
+}
+.search-content input[type="text"]{
+    width: 100%;
+    height: 34px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.seach-by-area{padding: 0;}
+.seach-by-area .col{
+    margin-bottom: 10px;
+}
+.search-type .search{
+    margin-top: 0;
+    margin-left: 10px;
+}
+.search-type-area.search-type{
+    margin-right: 0;
+    padding-right: 15px;
+    width:auto;
+    float: right;
+}
+.search-content .label-radius{
+    padding: 0;
+    float: left;
+    width: auto;
+    padding-top: 8px;
+}
+.input-location{
+    margin-bottom: 15px;
+}
+.search-content .container-search{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    width: 100%;
+}
+#form-search-distance .search-type{
+    float: right;
+    width: auto;
+    padding-right: 15px;
+
+}
+/*search filter*/
+.search-filter{
+    width: 100%;
+    float: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+}
+.search-filter .list-tag-ul{
+    padding:0 10px 0 15px;
+    max-height: 88px;
+    overflow-x: auto;
+}
+/*end*/
+.map-store {
+    margin-bottom: 15px;
+}
+.form-information h2{
+    color: #fff;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 600;
+    background-color: #428BCA;
+    padding: 7px 15px;
+}
+.form-information h2 span.glyphicon{
+    font-size: 16px;
+    margin-right: 10px;
+}
+.slider-imgs{
+    float: left;
+    width: 100%;
+    //padding-left: 15px;
+}
+.magestore-map-image img{
+    width: 100%;
+    max-height: 350px;
+    outline: 0;
+}
+/*Slider images*/
+.more-views p{
+    margin-top: 10px;
+    float: left;
+}
+.form-information .more-views ul li{
+    float: left;
+    padding: 3px;
+    margin: 1px;
+    border: 1px solid rgb(230, 230, 230);
+}
+.info-detail{
+    float: right;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.info-detail .box-detail{
+    border: 1px solid #ececec;
+    float: left;
+}
+.info-locator .tag-store, .tag-store {
+    display: table;
+    margin: 0 auto;
+    min-height: 79px;
+    position: absolute;
+}
+.tag-store a{
+    vertical-align: middle;
+    display: table-cell;
+    text-decoration: none;
+}
+.tag-store a:hover{
+    text-decoration: underline;
+}
+#tab_content,
+.info-locator .tag-content{
+    padding-left: 20px;
+    float: right;
+    min-height: 79px;
+}
+.info-locator .tag-content a.view-detail{
+    color: #428BCB;
+    text-decoration: none;
+    white-space: normal;
+}
+.info-locator .tag-content a.view-detail:hover{
+    text-decoration: underline;
+}
+.info-locator .tag-store span{
+    color: #545454;
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+    float: left;
+    position: absolute;
+    left: -4px;
+    bottom: -8px;
+}
+.el-content{display: block}
+.info-locator .tag-store img, .gm-style img{
+    margin: 0 auto;
+    display: block;
+    max-width: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+}
+.locator-content .container-locator{
+    margin-top: 15px;
+}
+.container-locator #map{
+    height: 535px;
+    margin-bottom: 15px;
+}
+.info-locator .title-list h2{
+    font-size: 14px;
+    color: #fff;
+    background:  url('../../images/storelocator/list.png') no-repeat 10px center;
+    background-color: #428BCB;
+    padding: 10px 10px 10px 43px;
+    text-transform: none;
+    background-size: 25px;
+}
+.info-locator .title-list h2 p{
+    float: right;
+}
+.info-locator .title-list h2 p span{
+    vertical-align: middle;
+}
+.tag-content h4{
+    font-size: 12px;
+    color: #24549d;
+    text-transform: capitalize;
+    min-height: 15px;
+}
+.tag-content p{
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+}
+.tag-content a{
+    font-size: 13px;
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 5px;
+    white-space: pre;
+}
+.tag-content a:hover{
+    text-decoration: none;
+}
+.info-locator .box{
+    float: left;
+    width: 100%;
+    background: #f8f8f8;
+    border: 1px solid #ececec;
+}
+.info-locator ul#list-store-detail{
+    float: left;
+    width: 100%;
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+.info-locator ul li.el-content{
+    padding: 10px 0;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px #D6D6D6, -1px -1px 7px #D6D6D6;
+    cursor: pointer;
+    min-height: 97px;
+}
+.info-locator ul li:hover{
+    background: #EAEAEA;
+}
+.info-locator ul li.first{
+    border-top: 1px solid #ccc;
+}
+#list-store-detail .custom-popup{
+    left: 0 !important;
+    margin-top: 10px;
+    height: auto !important;
+}
+.info-locator{
+    float: right;
+    padding-left: 0;
+}
+.tag-store-xs{
+    margin-top: 10px;
+    float: left;
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 100px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.tag-store-xs ul{
+    padding: 10px;
+}
+.tag-store-xs ul li{
+    padding: 0 10px;
+}
+.info-detail h4{
+    color: #24549d;
+    font-size: 14px;
+    text-transform:capitalize;
+    margin-top: 15px;
+    font-weight: 600;
+}
+.info-detail p{
+    color: #464646;
+    font-size: 12px;
+    margin-bottom: 5px;
+    line-height: 23px;
+    float: left;
+    width: 100%;
+    padding-left: 15px;
+}
+.info-detail p span.group-info,
+.info-detail p a.group-info{
+    padding-left: 10px;
+    float: left;
+    width: 70%;
+}
+.info-detail p strong{
+    color: #000;
+    float: left;
+}
+.time-open{
+    margin-top: 15px;
+}
+.time-open a{
+    padding: 7px 10px;
+    background: #12b483;
+    color: #fff;
+    border-radius: 3px;
+}
+.time-open a:hover{
+    background: #1aca95;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.time-open span{
+    color: #464646;
+    font-size: 11px;
+    font-style:italic;
+}
+/*Open*/
+.table-wrap{
+    // margin-top: 20px;
+}
+.table-wrap h2.title-store{
+    color: #fff;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 8px 15px 8px 40px;
+    background: #428BCA url('../../images/storelocator/Shop_Info.png') no-repeat 15px center;
+    background-size: 18px;
+}
+.tab_wrap{
+    float: left;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.tab_content .custom-popup{
+    left: 0 !important;
+}
+.tab_content{
+    float: left;
+    width: 100%;
+}
+.tab_content.display.active{
+    display: block;
+}
+.tab_content.display{
+    display: none;
+}
+.tab_content.open{
+    border: 1px solid #ececec;
+}
+#open_hour .table-responsive{
+    float: left;
+    width: 100%;
+}
+.tab_wrap h2{
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 0 8px;
+    background-color: #428BCA;
+    margin-bottom: 0;
+    font-weight: 600;
+    text-transform: none;
+    float: left;
+    width: 100%;
+}
+.tab_wrap h2 .glyphicon{
+    font-size: 16px;
+    padding-left: 15px;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.tab_wrap h3{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+#open_hour .table{
+    margin-bottom: 0;
+}
+#open_hour .table>tbody>tr>td{
+    text-align: center;
+}
+/*Direction*/
+.directions-type {
+    margin-top: 10px;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+ul#travel-modes {
+    width: 150px;
+    margin: 0 auto;
+}
+#tab_content_1,
+#tab_content_2{
+    max-height: 300px;
+    overflow: auto;
+}
+.tab_content .tabs{padding: 0;}
+.tab_content li {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ececec;
+}
+.tab_content .tabs li{
+    width: 50%;
+    padding: 8px 0;
+    background: #E4E3E3;
+    text-align: center;
+    cursor: pointer;
+}
+.tab_content .tabs li.active{
+    background: #428BCA;
+    color: #fff;
+}
+.tab_content .tabs li.active.full-width{
+    width: 100%;
+    background: #428BCA;
+}
+#open_hour li .content1,
+#open_hour li .content2{
+    width: 50%;
+    float: left;
+}
+ul#travel-modes li input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+}
+ul#travel-modes li label {
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    width: 40px;
+    background-color: #d0d0d0;
+    color: #fff;
+    text-indent: -9999px;
+    margin-right: 10px;
+}
+ul#travel-modes li input[type="radio"]:checked+label {
+    background-color: #12b483;
+}
+ul#travel-modes li label, #directionsForm ol.form li.swap-locations-wrapper button#swap-locations {
+    background-image: url('../../images/storelocator/sl-directions-form-atlas.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+ul#travel-modes li.transit label {
+    background-position: -40px top;
+}
+ul#travel-modes li.walking label {
+    background-position: -80px top;
+}
+.widget-directions-icon {
+    background: transparent url('../../images/storelocator/omnibox-sprite.png') no-repeat -2px -31px;
+    background-size: 20px 100px;
+    width: 16px;
+    height: 17px;
+    text-indent: -10000px;
+}
+.widget-directions-searchbox-handle {
+    visibility: visible ;
+    position: absolute;
+    height: 60px;
+    width: 15px;
+    padding: 8px 0 0 0;
+    z-index: 4;
+    transition: background-color 200ms cubic-bezier(0.52,0,0.48,1);
+}
+.widget-directions-icon.waypoint-handle {
+    background-position: 0 2px;
+    width: 16px;
+    height: 13px;
+}
+.widget-directions-searchbox-container .waypoint-bullet {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 70ms;
+    transition-delay: 130ms;
+}
+.widget-directions-icon.waypoint-bullet {
+    background-position: 0 -12px;
+    width: 11px;
+    height: 20px;
+    margin-top: 3px;
+}
+#directions-tool .form-inputs,
+#directions-el .form-inputs{
+    padding-left: 22px;
+}
+#directions-tool .form-inputs input,
+#directions-el .form-inputs input{
+    height: 34px;
+    width: 95%;
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    outline: 0;
+}
+#directions-tool .form-inputs input.originA,
+#directions-el .form-inputs input.originA{
+    border-top: 1px solid #ccc;
+}
+#directions-tool,
+#directions-tool{
+    margin-bottom: 10px;
+}
+#directions-panel{
+    max-height: 300px;
+    overflow: auto;
+}
+.widget-directions-right-overlay{
+    position: absolute;
+    z-index: 3;
+    top: 4px;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    border: 0;
+    opacity: 1;
+    transition: opacity 200ms cubic-bezier(0.52,0,0.48,1);
+}
+.widget-directions-right-overlay button{
+    text-indent: -10000px;
+    background: transparent url('../../images/storelocator/omnibox-sprite.png') no-repeat center -64px;
+    width: 20px;
+    border: none;
+    box-shadow: none;
+    margin-top: 20px;
+    outline: 0;
+    opacity: 0.5;
+}
+.widget-directions-right-overlay button:hover{
+    opacity: 1;
+}
+.get_direction {
+    margin: 10px 0;
+    max-height: 500px;
+    overflow: auto;
+    border-top: 1px solid #ececec;
+    padding-top: 10px;
+}
+.get_direction button{
+    float: right;
+}
+.store-locator-title{
+    color: #428BCA;
+    padding: 0 1px 0 0;
+}
+.store-locator-title span{
+    border-bottom: 2px solid #428BCA;
+}
+/*Popup Map*/
+.custom-popup {
+    left: 25px !important;
+}
+.custom-popup .box-input button{
+    margin-top: 10px;
+    float: right;
+}
+.custom-popup ul.vertical {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+.custom-popup .box-input{
+    padding: 0 15px;
+}
+.custom-popup .box-input input{
+    width: 100%;
+    font-size: 12px;
+}
+.custom-popup ul.vertical li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background-color: #ccc;
+    width: 40px;
+    float: none;
+    height: 20px;
+    border-bottom: none;
+}
+.custom-popup ul.vertical li span{
+    text-indent: -10000px;
+    padding: 0px 20px 5px 13px;
+    display: block;
+}
+.custom-popup ul.vertical li span:hover{
+    border-bottom: 2px solid #428bca;
+
+}
+.custom-popup ul.vertical li.car{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -40px;
+}
+.custom-popup ul.vertical li.bus{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -80px;
+}
+.custom-popup ul.vertical li.walk{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -120px;
+}
+.custom-popup ul.vertical li.bicycle{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -160px;
+}
+.custom-popup ul.vertical li.car:hover,
+.custom-popup ul.vertical li.car.active{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -60px;
+}
+.custom-popup ul.vertical li.bus:hover,
+.custom-popup ul.vertical li.bus.active{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -100px;
+}
+.custom-popup ul.vertical li.walk:hover,
+.custom-popup ul.vertical li.walk.active{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -140px;
+}
+.custom-popup ul.vertical li.bicycle:hover,
+.custom-popup ul.vertical li.bicycle.active{
+    background: url('../../images/storelocator/sprite-icon.png') no-repeat center -180px;
+}
+.storelocator-page h2.text-left{
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 8px 15px 8px 40px;
+    background: #428BCA url('../../images/storelocator/shop.png') no-repeat 15px center;
+    background-size: 18px;
+    margin-bottom: 20px;
+}
+.description span{
+    padding-left: 15px;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 700px;
+    }
+
+}
+@media (min-width: 992px) {
+    .container {
+        width: 860px;
+    }
+    .table-wrap {
+        padding-left: 0;
+    }
+    .store-locator-column-right{
+        padding: 0;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
+@media (max-width: 992px) {
+    #track1{
+        margin: 15px 0 15px 15px;
+    }
+    .store-locator-column-right {
+        padding-right: 0;
+    }
+    .info-detail{
+        padding-left: 15px;
+    }
+    .table-wrap {
+        padding: 0;
+    }
+    .range-slider-label{
+        left: 255px;
+    }
+}
+@media (min-width: 767px) and (max-width:992px) {
+    .info-locator .tag-store img{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 767px) {
+    .search-content .search-type .reset,
+    .search-content .search-type .search{
+        width: 70px;
+    }
+    .info-locator{
+        padding: 0;
+    }
+    .store-locator-column-right{
+        padding: 0;
+    }
+    .locator-content .container-locator{
+        margin-top: 25px;
+    }
+    .info-detail {
+        padding-left: 0;
+    }
+    .magestore-map-image img {
+        max-width: 550px;
+        display: block;
+        margin: 0 auto;
+    }
+    .table-responsive {
+        width: 100%;
+        margin-bottom: 0;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: none;
+    }
+    .store-locator-img{
+        text-align: center;
+    }
+}
+@media (max-width: 580px) {
+    .search-content .search-type .reset,
+    .search-content .search-type .search{
+        width: 55px;
+        height: 30px;
+        padding-top:3px;
+    }
+    .search-content .search-type .reset span,
+    .search-content .search-type .search span{
+        color: #fff;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    .search-type{
+        padding: 0;
+        margin-top:4px;
+    }
+}
+@media (max-width: 450px) {
+    .magestore-map-image img {
+        max-width: 100%;
+    }
+    .search-type{
+        padding: 0;
+        margin-top:4px;
+    }
+    .search-content .range-slider-label{
+        padding: 10px 0px;
+        float: left;
+        font-size: 11px;
+    }
+    .search-content .search-type .reset,
+    .search-content .search-type .search{
+        width: 48px;
+        height: 25px;
+        padding-top: 0px;
+    }
+    .storelocator-page h1{
+        font-size: 20px;
+    }
+}
+.search-content input[type="checkbox"],
+.search-content input[type="radio"]{
+    vertical-align: text-bottom;
+    outline: 0;
+    margin-right: 5px;
+}
+.fb_iframe_widget iframe{
+    width: 100% !important;
+}
+.touch .mfsl{
+    font-size: 14px;
+}
+.gm-style-iw .tag-store{
+    padding-left: 0;
+}
+.gm-style .gm-style-iw .custom-popup{
+    left: 0 !important;
+    margin-top: 10px;
+}
+.gm-style .gm-style-iw .tag-store span{
+    color: #545454;
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+    float: left;
+    position: absolute;
+    left: -4px;
+    bottom: -8px;
+}
+.widget-mylocation {
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+    position: relative;
+    -moz-user-select: none;
+}
+.widget-mylocation-button {
+    border-radius: 2px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    width: 29px;
+    height: 29px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0px;
+    border: 0px none;
+    outline: 0px none;
+    font: inherit;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+    list-style: outside none none;
+    background-color: #FFF;
+}
+.widget-mylocation-button .widget-mylocation-cookieless {
+    background: url('../../images/storelocator/geolocation_resize.png') no-repeat 0 0;
+    background-attachment: scroll;
+    display: block;
+    height: 18px;
+    left: 6px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 6px;
+    width: 18px;
+}
+.widget-mylocation-button:hover .widget-mylocation-cookieless{
+    background-position: -36px 0px;
+}
+#box-view{
+    left: 30px !important;
+}
+img.adp-marker {
+    width: 22px;
+    height: 40px;
+}
+.top-box .tag-content {
+    float: right;
+}
+
+.inforwindow .view-detail {
+    text-decoration: none;
+}
+.inforwindow .view-detail:hover {
+    text-decoration: underline;
+}
+button#storelocator_tag_check_all {
+    float: right;
+    margin: 3px 18px;
+}

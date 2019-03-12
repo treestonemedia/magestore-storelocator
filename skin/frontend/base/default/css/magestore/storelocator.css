@@ -1,0 +1,615 @@
+.track {
+    background-color: #aaa;
+    position: relative;
+    height: 0.5em; width: 10em;
+    cursor: pointer; z-index: 0;
+ }
+ .handle {
+    background-color: red;
+    position: absolute;
+    height: 1em; width: 0.25em; top: -0.25em;
+    cursor: move; z-index: 2;
+ }
+ .track.vertical {
+    width: 0.5em; height: 10em;
+ }
+ .track.vertical .handle {
+    width: 1em; height: 0.25em; top: 0; left: -0.25em;
+ }
+
+div#directions-panel .adp {
+    max-width: 300px;
+}
+/*Search*/
+#store-loader{text-align:center}
+#store-loader img{
+    margin:0 auto;
+}
+.store-locator-search-box{
+    width:99%;
+    border-bottom:1px solid #ccc;
+    margin-bottom:20px;
+}
+#store_locator_content #map img{
+    max-width:none;
+}
+.fields.store-locator-list.last {
+    float: right;
+}
+.store-locator-list label{
+    width:24%;
+}
+.form-list li{
+    margin-bottom:8px !important;
+}
+.store-locator-list select{
+    width: 72%;
+    padding: 0;
+    margin: 0;
+    height: 22px;
+}
+.store-locator-column-left{
+    padding-left:2%;
+    width:98%;
+    float:left;
+}
+.store-locator-column-right{
+    padding-left:5px;
+    width:420px;
+    float:right;
+}
+.store-locator-column-button{
+    padding-right:5px;
+    text-align:right;
+}
+/*Content*/
+#store-content{
+    width:100%;
+    height: auto;
+    border-bottom:1px solid #ccc;
+    padding-bottom:10px;
+    clear:both;
+    overflow:hidden;
+}
+/*List store*/
+.store-box{
+    border:1px solid #ccc;
+    float:left;
+    width:29%;
+    padding:5px 0px 5px 10px;
+    height:520px;
+    overflow:hidden;
+}
+.store-box .store-title{
+    width:95%;
+    font-size:16pt;
+    border-bottom:1px solid #ccc;
+    margin-bottom:5px;
+}
+#list-store{
+    width:93%;
+    padding-right:7%;
+    height:480px;
+    overflow:auto;
+    padding:0;
+}
+#list-store li{
+    width:100%;
+    min-height:100px;
+    height: auto;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    padding:2%;
+    list-style: none;
+}
+#list-store li:hover{
+    background:#E9E9F3;
+}
+#list-store li.active{
+    background:#E9E9F3;
+    border:1px solid #DE5400;
+}
+
+#list-store li p{
+    margin:3px 0;
+    color:#6699FF;
+    font-size:8pt;
+}
+.store_popup p{
+    margin:3px 0;
+    font-size:12px;
+}
+#list-store li .store_name, .store_popup .store_name{
+    color:#DE5400;
+    font-size:9pt;
+    font-weight:bold;
+}
+#list-store li .store_detail{
+    margin-top:6px;
+}
+#list-store li .store_detail a{
+    color:#1E7EC8;
+    text-decoration: underline;
+}
+#list-store li .position, .store_popup .position{
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    width:80%;
+    padding:2px 3px;
+    height:18px;
+}
+#list-store .sbutton, .store_popup .sbutton{
+    width:auto;
+    height:auto;
+    float:right;
+}
+#radius:disabled { background: #cdcdcd; }
+/*Map*/
+#map{
+    border:1px solid #ccc;
+    float:right;
+    height:530px;
+    width:68%;
+}
+#map .store_popup{
+    width:250px;
+}
+.store-pickup-image{
+    float :left;
+    margin-right: 5px;
+}
+
+.locator-main-outer .locator-image-small{
+    border: 2px solid #DDDDDD;
+    float: left;
+    height: 56px;
+    overflow: hidden;
+    width: 56px;
+}
+.locator-image-main{
+    margin: 0 0 13px;
+}
+.locator-main-outer .more-views h2 {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 11px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    font-weight:  bold;
+}
+.store-locator-title{
+    color: #de5400;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.more-views ul li {
+    float: left;
+    padding: 3px;
+    margin: 1px;
+    border: 1px solid rgb(230, 230, 230);
+}
+.magestore-map-image:hover img{
+    box-shadow: 0 0 5px rgb(155, 148, 148);
+}
+.locator-image-small:hover img{
+    border: 1px solid #ccc;
+}
+#description {
+    overflow: auto;
+    max-height: 250px;
+}
+.clear{clear:both;}
+.store-locator-tag{
+    position: relative;
+    width:97.8%;
+    padding:1%;
+    margin:auto;
+    padding-top: 20px;
+    margin-top:13px;
+    border:1px solid #E5E5E5;
+    clear:both;
+    background:url(storelocator/tag-bg.png) repeat;
+}
+.store-locator-tag ul{
+    overflow:hidden;
+}
+.store-locator-tag a{
+    color:#fafafa;
+    text-shadow: 0 1px rgba(0,0,0,0.4);
+    text-decoration:none;
+    display: inline-block;
+    padding: 0 12px;
+    font-size:11pt;
+    margin-bottom: 5px;
+    background:#06F;
+    border-radius:15px;
+    background: #ff9035; /* Old browsers */
+    line-height:27px;
+    background: -moz-linear-gradient(top,  #ff9035 1%, #ff7400 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ff9035), color-stop(100%,#ff7400)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ff9035 1%,#ff7400 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ff9035 1%,#ff7400 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ff9035 1%,#ff7400 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ff9035 1%,#ff7400 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9035', endColorstr='#ff7400',GradientType=0 ); /* IE6-9 */
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.21);
+}
+.store-locator-tag a:hover{
+    background: #B6DA25;
+}
+.magestore-storelocator-getdirection{
+    border: 1px solid #E5E6E3;
+    background-color: #FFFFFF;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width: 104%;
+}
+.magestore-storelocator-navigation{
+    margin-left: 3px;
+    margin-top: 5px;
+    margin-bottom:5px;
+    display: block;
+}
+#list-store .nav{
+    background-image: url(storelocator/navigation.png);
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    display:inline-block;
+    height: 8px;
+    width: 16px;
+    margin-right:10px;
+    display:none;
+}
+#list-store{
+    display:none;
+}
+#list-store .up{
+    background-position: -16px 0px;
+}
+#list-store  .store_navigation{
+    display:none;
+}
+.store-locator-tag .tag_active{
+    background:#B6DA25;
+}
+.store-locator-view-detail{
+    float:left;
+    width:40%;
+}
+.store-locator-view-detail label{
+    clear: both;
+    display: block;
+    float: left;
+    font-weight: bold;
+    width: 25%;
+}
+.store-locator-view-detail p{
+    margin-bottom:3px;
+}
+.store-locator-view-detail span {
+    display: block;
+    float: right;
+    padding-bottom: 2px;
+    width: 73%;
+}
+#list-store .istore{
+    float:left;
+    width:70%;
+
+}
+#list-store .istore-image{
+    width:28%;
+    float:right;
+     margin-bottom:5px;
+}
+#list-store .istore-image img{
+    max-width:100%;
+    min-height:95px;
+}
+.store-locator-span-tag {
+    font-weight: bold;
+    border: 1px solid #E5E5E5;
+    position: absolute;
+    top: -10px;
+    padding:2px;
+    background-color: #F1F0F0;
+    background:url(storelocator/tag-bg.png) repeat;
+}
+
+#store_information{
+    margin: 20px 0 0 0;
+    min-height: 280px;
+}
+
+.open_hour_title{
+
+    text-align: center;
+    line-height: 30px;
+    height:30px;
+    color: #161166;
+}
+#open_hour{
+    float: left;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+#open_hour .title{
+    margin-top:0px
+}
+#open_hour ul li{
+    width: 100%;
+    float:left;
+}
+ul#travel-modes{
+
+    width:150px;
+    margin:0 auto;
+
+}
+ul#travel-modes li{
+    float:left;
+}
+ul#travel-modes li input[type="radio"]:checked+label {
+    background-color: #2a8a15;
+}
+ul#travel-modes li input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+}
+ul#travel-modes li label {
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    width: 40px;
+    background-color: #d0d0d0;
+    color: #fff;
+    text-indent: -9999px;
+    margin-right: 10px;
+}
+
+ul#travel-modes li label, #directionsForm ol.form li.swap-locations-wrapper button#swap-locations {
+    background-image: url('../../images/storelocator/sl-directions-form-atlas.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+ul#travel-modes li.transit label {
+    background-position: -40px top;
+}
+
+ul#travel-modes li.walking label {
+    background-position: -80px top;
+}
+
+ul#travel-modes li.bicycling label {
+    background-position: -120px top;
+}
+#directions-tool{
+    position:relative;
+    overflow:hidden;
+    clear:both;
+}
+.directions-type{
+    margin-top:10px;
+    float:left;
+    margin-bottom:20px;
+    width:100%;
+}
+.directions-input{
+    margin-bottom:10px;
+    clear:both;
+}
+.directions-input label{
+    background: black;
+    color: white;
+    width: 25px;
+    height: 25px;
+    float:left;
+    text-align: center;
+    line-height: 25px;
+}
+.directions-input input{
+    height: 21px;
+    width: 80%;
+}
+
+.error{
+    display:none;
+}
+
+.swap-locations-wrapper {
+    height: 0;
+    position: absolute;
+    right: 3px;
+    bottom: 87px;
+}
+.swap-locations-wrapper button{
+    background-image: url('../../images/storelocator/sl-directions-form-atlas.png');
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    background-position: -157px top;
+    height: 40px;
+    width: 28px;
+    border: 0;
+}
+#get_direction{
+    background: green;
+    border: 1px green;
+    padding: 5px;
+    color: white;
+    margin-bottom:10px;
+    margin-left:10px;
+}
+.ui-tabs .ui-tabs-nav li{
+    width: 48%;
+}
+.adp-directions{
+    float:left;
+    width:100%;
+}
+.adp-summary{
+    float:left;
+    width:100%;
+}
+
+.adp-summary span{
+    width: 30%;
+    float:left;
+    text-align: center;
+}
+
+.directions{
+    width:70%;
+}
+
+.adp-legal-hide{
+    background: url(../../images/storelocator/direct-hidden.png) no-repeat;
+    height: 50px !important;
+    width: 229px !important;
+}
+.adp table{
+    clear:both;
+}
+
+#store_search .form-list li .input-text{
+    width:300px;
+}
+#store_search .form-list li{
+    clear:both;
+}
+#tabs-1, #tabs-2{display:none;}
+@media screen and (max-width:700px){
+    #map, .store-box, .store-locator-view-detail{
+        width:100%;
+        clear:both;
+    }
+}
+
+.tab_wrap{
+    border:1px solid #999;
+    width: 99%;
+    border-radius:7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -khtml-border-radius: 7px 7px 0 0;
+    padding:0.5%;
+}
+.tab_wrap h2, .tab_wrap h3{
+    font-family:Helvetica Neue,Verdana,Arial,sans-serif;
+    color:#3399cc;
+}
+.tab_wrap h3{
+    padding-left:10px;
+}
+.tab_wrap .tabs {
+    width: 99%;
+    margin: auto;
+    overflow: hidden;
+    background:#CCCCCC;
+    border: 1px solid #AAAAAA;
+    color: #222222;
+    font-weight: bold;
+    border-radius:7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -khtml-border-radius: 7px 7px 0 0;
+
+}
+.tabs ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+.tabs li a {
+    text-align:center;
+    width:49.8%;
+    color: #444444;
+    display: block;
+    float: left;
+    font-weight:bold;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    border:none;
+    border-left:1px solid #d9d9d9;
+
+}
+.tabs li:first-child a {
+    border-left:none;
+}
+.tabs li a.active {
+     background: #E6E6E6;
+    border:none;
+    border-left:1px solid #d9d9d9;
+
+}
+.tabs li:first-child a.active {
+    border:none;
+    border-bottom:1px solid #FFFFFF;
+
+}
+.tabs li:last-child a.active {
+    border:none;
+    border-left:1px solid #d9d9d9;
+    border-bottom:1px solid #FFFFFF;
+}
+/* tab_content */
+.tab_content {
+    background:#FFF;
+    padding:0;
+    display:none;
+    position:relative;
+}
+.tab_content.active{
+    display:block;
+}
+.tab_content ul {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    overflow:hidden;
+}
+.tab_content li {
+    display:block;
+    overflow: hidden;
+    border-bottom:1px solid #d6dde0;
+}
+.tab_content li:last-child {
+    border-bottom:none;
+}
+.tab_content li a {
+    display:block;
+    list-style:none;
+    overflow: hidden;
+    padding:10px;
+    text-decoration:none;
+    color:#444444;
+}
+.tab_content li a:hover {
+    color:#000000;
+    background:#F5F5F5;
+}
+.tab_content li small {
+    color:#AAAAAA;
+    font-size:11px;
+    font-style:italic;
+}
+.tab_content li a:hover small {
+    color:#AAAAAA;
+}
+.link-print {
+background: url(storelocator/i_print.gif) 0 2px no-repeat;
+padding: 2px 0 2px 25px;
+}
+@media print {
+   .link-print,#header, .header-language-background,.footer-container, #store_search, .store-locator-column-right, .header-container, .nav-container, .store-locator-column-left{
+        display: none;
+    }
+
+
+}
+

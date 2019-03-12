@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category 	Magestore
+ * @package 	Magestore_Storelocator
+ * @copyright 	Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license 	http://www.magestore.com/license-agreement.html
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="top.links">
+            <block type="storelocator/storelocator" name="storelocator">
+                <action method="addTopLinkStores"/>
+            </block>
+        </reference>        
+    </default>
+    <storelocator_index_index>
+         <reference name="head">
+            <action method="addJs">
+                <script>magestore/storelocator/markerclusterer_compiled.js</script>
+            </action>
+            <action method="addJs">
+                <script>magestore/storelocator.js</script>
+            </action>            
+            <action method="addJs">
+                <script>scriptaculous/scriptaculous.js?load=slider</script>
+            </action>
+            <action method="addCss">
+                <styleSheet>css/magestore/bootstrap.min.css</styleSheet>
+            </action>
+             <action method="addCss">
+                <styleSheet>css/magestore/style-responsive.css</styleSheet>
+            </action>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="storelocator/storelocator" name="styles" template="storelocator/styles.phtml" />
+            <block type="storelocator/storelocator" name="list-storelocator" template="storelocator/storelocator.phtml"/>                
+        </reference>
+    </storelocator_index_index>
+    <storelocator_index_view>
+        <reference name="head">
+            <action method="addJs">
+                <script>scriptaculous/scriptaculous.js?load=slider</script>
+            </action>
+            <action method="addJs">
+                <script>magestore/easySlider1.7.js</script>
+            </action>
+            <action method="addCss">
+                <styleSheet>css/magestore/bootstrap.min.css</styleSheet>
+            </action>
+             <action method="addCss">
+                <styleSheet>css/magestore/style-responsive.css</styleSheet>
+            </action>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="storelocator/storelocator" name="styles" template="storelocator/styles.phtml" />
+            <block type="storelocator/storelocator" name="storelocator-view" template="storelocator/view.phtml"/>
+        </reference>
+    </storelocator_index_view>
+    <storelocator_index_test>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="storelocator/storelocator" name="stores" template="storelocator/storesblock.phtml" />
+        </reference>
+    </storelocator_index_test>
+    <catalog_product_view>
+        <reference name="alert.urls">
+            <block type="storelocator/storelocator" name="storelocator_search" template="storelocator/searchbyproduct.phtml"/>
+        </reference>
+    </catalog_product_view>
+</layout>

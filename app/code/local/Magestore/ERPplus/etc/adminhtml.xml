@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magestore
+ * @package     Magestore_Erp
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config>
+    <menu>
+        <magestore_erpplus module="erpplus" translate="title">
+            <title>ERP Plus</title>
+            <sort_order>71</sort_order>
+            <action>adminhtml/erpplus/dashboard</action>          
+                <children>
+                    <magestore_erpplus module="erpplus" translate="title">
+                        <title>App Dashboard</title>
+                        <sort_order>0</sort_order>  
+                        <action>adminhtml/erpplus/dashboard</action>         
+                    </magestore_erpplus>
+                </children>              
+        </magestore_erpplus>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <magestore_erpplus module="erpplus" translate="title">
+                        <title>ERP Plus</title>
+                        <sort_order>71</sort_order>          
+                    </magestore_erpplus>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

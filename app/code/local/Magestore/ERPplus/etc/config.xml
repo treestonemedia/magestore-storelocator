@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magestore
+ * @package     Magestore_Erp
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config>    
+    <modules>
+        <Magestore_ERPplus>
+            <version>0.1.0</version>
+        </Magestore_ERPplus>
+    </modules>
+    <admin> 
+        <routers> 
+            <adminhtml> 
+                <args> 
+                    <modules> 
+                        <magestore_erpplus after="Mage_Adminhtml">Magestore_ERPplus_Adminhtml</magestore_erpplus> 
+                    </modules> 
+                </args> 
+            </adminhtml> 
+        </routers> 
+    </admin>    
+    <adminhtml>
+        <layout>
+            <updates>
+                <erpplus>
+                    <file>erp_plus.xml</file>
+                </erpplus>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Magestore_ERPplus>
+                    <files>
+                        <default>Magestore_ERPplus.csv</default>
+                    </files>
+                </Magestore_ERPplus>
+            </modules>
+        </translate>               
+        <events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <magestore_erpplus_observers>
+                        <class>erpplus/observer</class>
+                        <method>controller_action_layout_load_before</method>
+                    </magestore_erpplus_observers>
+                </observers>
+            </controller_action_layout_load_before>
+            <inventoryplus_before_show_title>     
+                <observers>
+                    <magestore_erpplus_observers>
+                        <class>erpplus/observer</class>
+                        <method>inventoryplus_before_show_title</method>
+                    </magestore_erpplus_observers>
+                </observers>                                                  
+            </inventoryplus_before_show_title>                                       
+        </events>
+    </adminhtml>   
+    <global>       
+        <models>
+            <erpplus>
+                <class>Magestore_ERPplus_Model</class>
+            </erpplus>
+        </models>
+        <blocks>
+            <erpplus>
+                <class>Magestore_ERPplus_Block</class>
+            </erpplus> 
+            <!-- 
+            <adminhtml>  
+                <rewrite>
+                    <page_menu>Magestore_ERPplus_Block_Adminhtml_Rewrite_Menu</page_menu>
+                </rewrite>
+            </adminhtml>  
+            -->
+        </blocks>
+        <helpers>
+            <erpplus>
+                <class>Magestore_ERPplus_Helper</class>
+            </erpplus>
+        </helpers>
+    </global>
+</config>

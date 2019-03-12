@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category 	Magestore
+ * @package 	Magestore_Storelocator
+ * @copyright 	Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license 	http://www.magestore.com/license-agreement.html
+ */
+-->
+<config>
+    <menu>
+        <storelocator module="storelocator" translate="title">
+            <title>Store Locator</title>
+            <sort_order>71</sort_order>               
+            <children>
+                <storelocator module="storelocator" translate="title">
+                    <title>Manage Stores</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/storelocator_storelocator</action>
+                    <icon>fa-institution</icon>
+                </storelocator>
+                <holidays module="storelocator">
+                    <title>Manage Holidays</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/storelocator_holiday</action>
+                    <icon>fa-calendar</icon>
+                </holidays>
+                <specialdays module="storelocator">
+                    <title>Manage Special Days</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/storelocator_specialday</action>
+                    <icon>fa-calendar-check-o</icon>
+                </specialdays>
+                <settings module="storelocator" translate="title">
+                    <title>Settings</title>
+                    <sort_order>1000</sort_order>
+                    <action>adminhtml/system_config/edit/section/storelocator</action>
+                    <icon>fa-cog</icon>
+                </settings>
+                <guide module="storelocator">
+                    <title>Guide</title>
+                    <sort_order>1001</sort_order>
+                    <action>adminhtml/storelocator_guide</action>
+                    <icon>fa-file-text-o</icon>
+                </guide>
+                <simicart module="storelocator" translate="title">
+                    <title>Use in mobile app</title>
+                    <sort_order>2000</sort_order>
+                    <action>adminhtml/storelocator_simi</action>
+                    <icon>fa-tablet</icon>
+                </simicart>
+            </children>
+        </storelocator>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <storelocator module="storelocator" translate="title">
+                                        <title>Store Locator</title>
+                                        <sort_order>71</sort_order>									
+                                    </storelocator>								
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <storelocator module="storelocator" translate="title">
+                        <title>Storelocator</title>
+                        <sort_order>71</sort_order>               
+                        <children>
+                            <storelocator module="storelocator" translate="title">
+                                <title>Manage Stores</title>
+                                <sort_order>0</sort_order>
+                            </storelocator>
+                            <holidays module="storelocator" translate="title">
+                                <title>Manage Holidays</title>
+                                <sort_order>1</sort_order>                                                            
+                            </holidays>
+                            <specialdays module="storelocator" translate="title">
+                                <title>Guide</title>
+                                <sort_order>2</sort_order>
+                                                           
+                            </specialdays>
+                            <settings module="storelocator" translate="title">
+                                <title>Settings</title>
+                                <sort_order>1000</sort_order>
+                            </settings>
+                            <simicart module="storelocator" translate="title">
+                                <title>Use in mobile app</title>
+                                <sort_order>2000</sort_order>
+                            </simicart>
+                        </children>
+                    </storelocator>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

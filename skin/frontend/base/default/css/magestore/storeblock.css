@@ -1,0 +1,86 @@
+.track {
+    background-color: #aaa;
+    position: relative;
+    height: 0.5em; 
+    cursor: pointer; 
+    z-index: 0;
+    width: 20em;
+    margin: 4px 0px;
+ }
+ .track,.track_ranger{
+     float: left;
+ }
+ .track_ranger{
+     margin: 0px 10px;
+ }
+ .handle {
+    background-color: red;
+    position: absolute;
+    height: 1em; width: 0.25em; top: -0.25em;
+    cursor: move; z-index: 2;
+ }
+ .track.vertical {
+    width: 0.5em; height: 10em;
+ }
+ .track.vertical .handle {
+    width: 1em; height: 0.25em; top: 0; left: -0.25em;
+ }
+#map{
+    border  :1px solid #ccc;
+    height  :300px;
+    width   :100%;
+}
+#form-search-distance{
+    background-color: white;
+    margin: 10px;
+    padding: 6px;
+    width: 300px;
+}
+.row1{
+    padding: 10px 0 21px;
+}
+.abcdef{
+    text-align: right;
+}
+.widget-mylocation {
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+    position: relative;
+    -moz-user-select: none;
+}
+.widget-mylocation-button {
+    border-radius: 2px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    width: 29px;
+    height: 29px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0px;
+    border: 0px none;
+    outline: 0px none;
+    font: inherit;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+    list-style: outside none none;
+    background-color: #FFF;
+}
+.widget-mylocation-button .widget-mylocation-cookieless {
+    background: url('../../images/storelocator/geolocation_resize.png') no-repeat 0 0;
+    background-attachment: scroll;
+    display: block;
+    height: 18px;
+    left: 6px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 6px;
+    width: 18px;
+}
+.widget-mylocation-button:hover .widget-mylocation-cookieless{
+    background-position: -36px 0px;
+}
+#box-view{
+    right: 10px !important;
+}

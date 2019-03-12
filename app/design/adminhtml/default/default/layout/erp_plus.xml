@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category    Magestore
+ * @package     Magestore_Erp
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">           
+            <action method="addCss">
+                <stylesheet>css/magestore/erp_plus/erp_item.css</stylesheet>
+            </action>                         
+        </reference>
+    </default>    
+    <adminhtml_erpplus_module_layout>
+        <reference name="head">           
+            <action method="addCss">
+                <stylesheet>css/magestore/erp_plus/menu.css</stylesheet>
+            </action>
+            <action method="addCss">
+                <stylesheet>css/magestore/erp_plus/style.css</stylesheet>
+            </action>                         
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>erp_plus/page-2column-left.phtml</template>
+            </action>          
+        </reference> 
+    </adminhtml_erpplus_module_layout>
+    
+    <adminhtml_erpplus_one_column_layout>
+        <update handle="adminhtml_erpplus_module_layout" />
+        <reference name="head">           
+            <action method="addCss">
+                <stylesheet>css/magestore/erp_plus/one-column.css</stylesheet>
+            </action>                       
+        </reference>        
+        <reference name="root">
+            <action method="setTemplate">
+                <template>erp_plus/page-1column.phtml</template>
+            </action>
+        </reference> 
+    </adminhtml_erpplus_one_column_layout>
+    
+    <adminhtml_erpplus_dashboard>      
+        <update handle="adminhtml_erpplus_one_column_layout" />  
+        <reference name="content">
+            <block type="erpplus/adminhtml_dashboard" template="erp_plus/page/dashboard.phtml" />
+        </reference>
+    </adminhtml_erpplus_dashboard>  
+    
+    <adminhtml_inventoryplus_layout>  
+        <reference name="head">           
+            <action method="addCss">
+                <stylesheet>css/magestore/erp_plus/style.css</stylesheet>
+            </action>  
+        </reference>        
+    </adminhtml_inventoryplus_layout>    
+</layout>

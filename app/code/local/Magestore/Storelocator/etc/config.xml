@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category 	Magestore
+ * @package 	Magestore_Storelocator
+ * @copyright 	Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license 	http://www.magestore.com/license-agreement.html
+ */
+-->
+<config>
+    <modules>
+        <Magestore_Storelocator>
+            <version>0.3.1</version>
+        </Magestore_Storelocator>
+    </modules>
+    <frontend>
+        <routers>
+            <storelocator>
+                <use>standard</use>
+                <args>
+                    <module>Magestore_Storelocator</module>
+                    <frontName>storelocator</frontName>
+                </args>
+            </storelocator>
+        </routers>
+        <layout>
+            <updates>
+                <storelocator>
+                    <file>storelocator.xml</file>
+                </storelocator>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Magestore_Storelocator>
+                    <files>
+                        <default>Magestore_Storelocator.csv</default>
+                    </files>
+                </Magestore_Storelocator>
+            </modules>
+        </translate>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml> 
+                <args> 
+                    <modules> 
+                        <Magestore_Storelocator after="Mage_Adminhtml">Magestore_Storelocator_Adminhtml</Magestore_Storelocator>
+                    </modules> 
+                </args> 
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <storelocator>
+                    <file>storelocator.xml</file>
+                </storelocator>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Magestore_Storelocator>
+                    <files>
+                        <default>Magestore_Storelocator.csv</default>
+                    </files>
+                </Magestore_Storelocator>
+            </modules>
+        </translate>
+    </adminhtml>
+    <global>
+        <models>
+            <storelocator>
+                <class>Magestore_Storelocator_Model</class>
+                <resourceModel>storelocator_mysql4</resourceModel>
+            </storelocator>
+            <storelocator_mysql4>
+                <class>Magestore_Storelocator_Model_Mysql4</class>
+                <entities>
+                    <storelocator>
+                        <table>storelocator</table>
+                    </storelocator>
+                    <image>
+                        <table>storelocator_image</table>
+                    </image>
+                    <storevalue>
+                        <table>storelocator_value</table>
+                    </storevalue>
+                    <tag>
+                        <table>storelocator_tag</table>
+                    </tag>
+                    <holiday>
+                        <table>storelocator_holiday</table>
+                    </holiday>
+                    <specialday>
+                        <table>storelocator_specialday</table>
+                    </specialday>
+                </entities>
+            </storelocator_mysql4>
+        </models>
+        <resources>
+            <storelocator_setup>
+                <setup>
+                    <module>Magestore_Storelocator</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </storelocator_setup>
+            <storelocator_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </storelocator_write>
+            <storelocator_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </storelocator_read>
+        </resources>
+        <blocks>
+            <storelocator>
+                <class>Magestore_Storelocator_Block</class>
+            </storelocator>
+        </blocks>
+        <helpers>
+            <storelocator>
+                <class>Magestore_Storelocator_Helper</class>
+            </storelocator>
+        </helpers>
+        <!-- <events>
+                <controller_action_predispatch>
+                        <observers>
+                                <storelocator_observers>
+                                        <class>storelocator/observer</class>
+                                        <method>controllerActionPredispatch</method>
+                                </storelocator_observers>
+                        </observers>
+                </controller_action_predispatch>
+        </events> -->
+    </global>
+    <default>
+        <storelocator>
+            <general>
+                <enable>1</enable>
+                <allow_face>1</allow_face>
+                <language>en_US</language>
+                <toplink>1</toplink>
+                
+                <choose_search>5</choose_search>
+                <search_radius_default>100</search_radius_default>
+                <overwrite_exists_locator>0</overwrite_exists_locator>
+                <page_title>Store Locator</page_title>
+                <show_spencial_days>30</show_spencial_days>
+                <default_country></default_country>
+                <sort_store>distance</sort_store>
+                <distance_unit>km</distance_unit>
+            </general>
+            <style_config>
+                <background_tab_search_active>428BCA</background_tab_search_active>
+                <background_title_page>428BCB</background_title_page>
+                <color_title_search_active>FFFFFF</color_title_search_active>
+                <color_title_page>FFFFFF</color_title_page>
+                <background_show_all>428BCA</background_show_all>
+                <background_show_btn_direction>428BCA</background_show_btn_direction>
+                <color_show_all>FFFFFF</color_show_all>
+                <background_title_store_list>428BCA</background_title_store_list>
+                <color_title_store_list>FFFFFF</color_title_store_list>
+                <use_available_style>1</use_available_style>
+                <map_style>0</map_style>
+            </style_config>
+            <storelocator_flexibebox>
+                <zoomlevel>10</zoomlevel>
+                <height>300</height>
+            </storelocator_flexibebox>
+        </storelocator>
+    </default>
+
+</config>

@@ -1,0 +1,113 @@
+<?php
+/**
+ * @see Magestore_Storelocator_Block_Storelocator
+ */
+?>
+<?php
+$storeViewId    = Mage::app()->getStore()->getStoreId();
+$countries      = $this->getListCountry1();
+$unit           = $this->getUnitRadius();
+$deaultRadius   = $this->chekRadiusDefault();
+$mapStyles = Mage::getModel('storelocator/gmap')->getMapStyle();
+if (Mage::getStoreConfig('storelocator/style_config/use_available_style', $storeViewId)) {
+    $mapStyles = Mage::getModel('storelocator/gmap')->getMapStyle();
+    $mapStyle = $mapStyles[Mage::getStoreConfig('storelocator/style_config/map_style', $storeViewId)];
+} else {
+    $mapStyle = Mage::getStoreConfig('storelocator/style_config/map_custom_style', $storeViewId);
+}
+?>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php echo $this->getGoogleApiKey(); ?>&sensor=false&libraries=geometry,places"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS),'magestore/storesblock.js' ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/magestore/storeblock.css') ?>" media="all" />
+<div class="search-by-distance" id="form-search-distance" style="display: none;">
+    <input type="text" class="form-control" id="search_address" placeholder="<?php echo $this->__('Please enter a location') ?>" style="margin-bottom: 5px;"/>
+    <div class="col-md-4 col-sm-6 col-xs-12" style="display: none;">
+        <div class="row1">
+            <div id="track1" class="track">
+                <div id="handle1" class="handle" style="width: 0.5em;" ></div>
+            </div>
+            <div class="track_ranger" style="padding: 0px"><span class="range-slider-label" id="range-slider-label"><?php echo $deaultRadius ?> <?php echo $unit ?></span></div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12 search-type">
+        <div class="abcdef">
+            <button class="button reset" id="reset_map"><span><span><?php echo $this->__('Reset') ?></span></span></button>
+            <button class="button search-distance" id="search-distance"><span><span><?php echo $this->__('Search') ?></span></span></button>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-md-8 col-sm-8 " id="map" style="float: right"></div>
+<div id="box-view">
+    <div class="widget-mylocation">
+        <button id="widget-mylocation-button" class="widget-mylocation-button" title="<?php echo $this->__('Show My Location') ?>">
+            <div class="widget-mylocation-cookieless"></div>
+        </button>
+        <div class="widget-mylocation-tooltip widget-mylocation-tooltip-invisible">
+            <div class="widget-mylocation-tooltip-label-wrapper">
+                <div class="widget-mylocation-tooltip-label" style="display:none">
+                    <label><?php echo $this->__('Show My Location') ?></label>
+                </div>
+            </div>
+            <div class="widget-mylocation-tooltip-pointer"></div>
+        </div>
+    </div>
+</div>
+<div id="store_info" style="display: none">
+    <div class="tag-content">
+        <h4><a href="#" class="view-detail"></a></h4>
+        <p class="address-store"></p>
+        <p class="phone-store"></p>
+    </div>
+</div>
+<script>
+    var storeblock;
+    document.observe('dom:loaded',function(){
+        storeblock = new Storeblock({
+                map         :$('map'),
+                unit        :{label:'<?php echo $unit ?>',value:'<?php echo $unit=='km'?1000:1602 ?>'},
+                url_icon    :'<?php echo Mage::getBaseUrl('media') . 'storelocator/images/icon/resize/{icon}' ?>',
+                storeInfo   :$('store_info'),
+                circleIcon  :'<?php echo $this->getSkinUrl("images/storelocator/center.png") ?>',
+                mapStyle    :<?php echo $mapStyle ?>,
+                stores      :<?php echo $this->getListStoreJson() ?>,
+                baseUrl     :'<?php echo $this->getBaseUrl() ?>',
+                controller  :$('form-search-distance'),
+                mylocation  :$('box-view'),
+                deaultRadius: <?php echo $deaultRadius ?>,
+                zoom        : <?php echo Mage::getStoreConfig('storelocator/storelocator_flexibebox/zoomlevel', $storeViewId) ?>
+        });
+        if($('search-distance'))
+            $('search-distance').observe('click',function(){
+                storeblock.codeAddress($F('search_address'));
+            });
+        if($('reset_map'))
+            $('reset_map').observe('click',function(){
+                storeblock.reset();
+                $('search_address').value=null;
+            });
+        $('search_address').observe('keyup', function(event) {
+            if (event.keyCode == 13) {
+                storeblock.codeAddress($F('search_address'));
+            }
+        });
+        $('search_address').observe('change', function() {
+            setTimeout(function(){
+                storeblock.codeAddress($F('search_address'));
+            }, 500); 
+        });
+    });
+    var storeTranslate = {
+        noneStore   : '<?php echo $this->__('0 store') ?>',
+        oneStore    : '<?php echo $this->__('1 store') ?>',
+        moreStore   : '<?php echo $this->__(' stores') ?>',
+        geocodeMissuccess   : '<?php echo $this->__('Geocode was not successful for the following reason: ') ?>',
+        enterLocation       : '<?php echo $this->__('Please enter a location to search!') ?>',
+        streetNotFound      : '<?php echo $this->__('Street View data cannot found for this location.') ?>',
+        directionFailded    : '<?php echo $this->__('Directions request failed due to ') ?>',
+        geoLocationFailded  : '<?php echo $this->__('Error: The Geolocation service failed.') ?>',
+        geoLocationBrower   : '<?php echo $this->__("Error: Your browser doesn\'t support geolocation.") ?>',
+    };
+</script>
+<style>
+    #map{height: <?php echo Mage::getStoreConfig('storelocator/storelocator_flexibebox/height', $storeViewId) ?>px}
+</style>>

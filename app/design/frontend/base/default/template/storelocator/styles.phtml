@@ -1,0 +1,27 @@
+<?php
+    $store_id = Mage::app()->getStore()->getStoreId();
+?>
+<style type="text/css">
+    .storelocator-page h2.text-left{
+         background-color: #<?php echo Mage::getStoreConfig('storelocator/style_config/background_title_page', $store_id) ?>;
+         color: #<?php echo Mage::getStoreConfig('storelocator/style_config/color_title_page', $store_id) ?>;
+    }
+    .search-button a.search.active{
+         background-color: #<?php echo Mage::getStoreConfig('storelocator/style_config/background_tab_search_active', $store_id) ?>;
+         color: #<?php echo Mage::getStoreConfig('storelocator/style_config/color_title_search_active', $store_id) ?>;
+    }
+    .search-filter ul li label button,
+    .search-filter ul li label button:hover{
+         background-color: #<?php echo Mage::getStoreConfig('storelocator/style_config/background_show_all', $store_id) ?>;
+         color: #<?php echo Mage::getStoreConfig('storelocator/style_config/color_show_all', $store_id) ?>;
+    }
+    .info-locator .title-list h2,
+    .table-wrap h2.title-store,
+    .form-information h2,
+    .tab_wrap h2,
+    .tab_content .tabs li.active,
+    .tab_content .tabs li.active.full-width{
+         background-color: #<?php echo Mage::getStoreConfig('storelocator/style_config/background_title_store_list', $store_id) ?>;
+         color: #<?php echo Mage::getStoreConfig('storelocator/style_config/color_title_store_list', $store_id) ?>;
+    }
+</style>

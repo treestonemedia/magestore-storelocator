@@ -1,0 +1,9 @@
+<config>
+   <Magestore_Storelocator>
+      <name>Store Locator</name>
+      <type>commercial</type>
+      <activation_date>Jan 11, 2016</activation_date>
+      <expiration_date/>
+      <order_number>100071425</order_number>
+   </Magestore_Storelocator>
+</config>

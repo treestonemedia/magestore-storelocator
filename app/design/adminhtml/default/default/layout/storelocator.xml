@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category 	Magestore
+ * @package 	Magestore_Storelocator
+ * @copyright 	Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license 	http://www.magestore.com/license-agreement.html
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss">
+                <styleSheet>magestore/storelocator.css</styleSheet>
+            </action>
+            <action method="addJs">
+                <script>magestore/jscolor/jscolor.js</script>
+            </action> 
+        </reference>	
+    </default>
+    <adminhtml_storelocator_storelocator_index>
+        <reference name="content">
+            <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                <action method="setUseConfirm">
+                    <params>0</params>
+                </action>
+            </block>
+            <block type="storelocator/adminhtml_storelocator" name="storelocator" />
+        </reference>
+    </adminhtml_storelocator_storelocator_index>      
+    <adminhtml_storelocator_storelocator_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="setCanLoadTinyMce">
+                <flag>1</flag>
+            </action>
+            <action method="addJs">
+                <script>magestore/gallery.js</script>
+            </action>
+            <action method="addJs">
+                <script>magestore/adminhtml/storelocator.js</script>
+            </action>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-" />
+        </reference>
+    </adminhtml_storelocator_storelocator_edit>
+    <adminhtml_storelocator_holiday_index>
+        <reference name="content">
+            <block type="storelocator/adminhtml_holiday" name="holiday" />
+        </reference>
+    </adminhtml_storelocator_holiday_index>
+    <adminhtml_storelocator_specialday_index>
+        <reference name="content">
+            <block type="storelocator/adminhtml_specialday" name="specialday" />
+        </reference>
+    </adminhtml_storelocator_specialday_index>
+    
+    <adminhtml_storelocator_guide_index>
+        <reference name="content">
+            <block type="storelocator/adminhtml_guide" name="storelocator_guide" as="storelocator_guide" template="storelocator/guide.phtml" />                            
+        </reference>
+    </adminhtml_storelocator_guide_index>  
+    <adminhtml_storelocator_storelocator_product>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="storelocator/adminhtml_storelocator_edit_tab_product" name="storelocator.edit.tab.product"/>
+            <block type="adminhtml/widget_grid_serializer" name="related_grid_serializer">
+                <reference name="related_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>storelocator.edit.tab.product</grid_block_name>
+                        <data_callback>getSelectedProducts</data_callback>
+                        <hidden_input_name>sproducts</hidden_input_name>
+                        <reload_param_name>store_products</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>	
+    </adminhtml_storelocator_storelocator_product>
+
+    <adminhtml_storelocator_storelocator_productgrid>
+        <block type="core/text_list" name="root">
+            <block type="storelocator/adminhtml_storelocator_edit_tab_product" name="storelocator.edit.tab.product"/>
+        </block>
+    </adminhtml_storelocator_storelocator_productgrid>
+</layout>

@@ -1,0 +1,3 @@
+<?php if($this->countStoreHasProduct()): ?>
+<br/><a href="<?php echo $this->getUrl('storelocator',array('prouduct_id'=>Mage::registry('current_product')->getId())) ?>" style="clear: both;float: left;"><?php echo $this->__('search store') ?></a>
+<?php endif; ?>

@@ -1,0 +1,45 @@
+<?php
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_Inventory
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+/**
+ * Inventory Adminhtml Controller
+ *
+ * @category    Magestore
+ * @package     Magestore_Erp
+ * @author      Magestore Developer
+ */
+?>
+<h3>
+    <a href="javascript:void(0);" <?php if (!$this->isInDashboard()): ?>onclick="showDashboardMenu();"<?php endif; ?>>
+        <span><i class="fa fa-th"></i> <?php echo $this->getTitle() ?></span>
+    </a>
+</h3>    
+<div id="show_main_menu">
+    <a href="javascript:void(0);" onclick="erpMenu.showmainmenu()">
+        <i class="fa fa-angle-double-down"></i>
+    </a>
+</div>
+<div id="erp_menu_dashboard">
+    <?php echo $this->getLayout()->createBlock('erpplus/adminhtml_dashboard')->setTemplate('erp_plus/page/dashboard-menu.phtml')->toHtml() ?>
+</div>
+<script src="<?php echo $this->getJsUrl() ?>magestore/erp_plus/menu.js"></script>
+<script type="text/javascript">
+        var erpMenu = new ERPmenuController('<?php echo $this->__('Hide Main Menu'); ?>', '<?php echo $this->__('Show Main Menu'); ?>');
+</script>
